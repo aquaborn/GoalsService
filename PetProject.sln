@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetProject", "PetProject\Pe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetCommon", "PetCommon\PetCommon.csproj", "{E1649ED8-056E-48E5-8A46-16F1241856E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pet.Api", "Pet.Api\Pet.Api.csproj", "{D9694872-F7F6-4415-B0FF-33D7472BF4CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pet.Api", "Pet.Api\Pet.Api.csproj", "{D9694872-F7F6-4415-B0FF-33D7472BF4CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
