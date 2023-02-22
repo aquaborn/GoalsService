@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Pet.Api.Authorization
 {
-    public class CustomAuthorizeAttribute
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true, Inherited = true)]
+    public class CustomAuthorizeAttribute : AuthorizeAttribute, IAuthorizationFilter
     {
         public void OnAuthorization(AuthorizationFilterContext context)
         {
@@ -24,7 +26,7 @@ namespace Pet.Api.Authorization
 
             // If JWT produced through unauthorized Auth0 app - reject
             var services = context.HttpContext.RequestServices;
-            var auth0Settings = services.GetService<Auth0Settings>();
+            var auth0Settings = services.GetService<AuthSettings>();
             if (auth0Settings.AllowedAppId != auth0AppIdClaim.Value)
             {
                 context.Result = new UnauthorizedResult();
@@ -33,3 +35,4 @@ namespace Pet.Api.Authorization
 
         }
     }
+}
