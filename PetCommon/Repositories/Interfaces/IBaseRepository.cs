@@ -19,6 +19,8 @@ namespace PetCommon.Repositories.Interfaces
 
         Task<List<TEntity>> GetAllAsync();
 
+        Task<TEntity> FindByIdAsync(object id);
+
         Task<IList<TEntity>> UpdateRangeAsync(IList<TEntity> entities);
 
         Task<TEntity> UpdateAsync(TEntity entityToUpdate);

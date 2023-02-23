@@ -42,6 +42,11 @@ namespace PetCommon.Repositories
         {
             return await context.Set<TEntity>().AsNoTracking().ToListAsync();
         }
+        
+        public virtual async Task<TEntity> FindByIdAsync(object id)
+        {
+            return await context.Set<TEntity>().FindAsync(id);
+        }
 
         public async Task<List<TEntity>> FindAllByWhereAsync(Expression<Func<TEntity, bool>> match)
         {
