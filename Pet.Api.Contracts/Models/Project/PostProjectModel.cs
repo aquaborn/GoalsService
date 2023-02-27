@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pet.Common.Repositories.Interfaces
+namespace Pet.Api.Contracts.Models.Project
 {
-    public interface IProjectRepository: IRepositoryBase<Project>
+    public class PostProjectModel : PutProjectModel
     {
-       
+        public Guid Id { get; set; }
     }
 }

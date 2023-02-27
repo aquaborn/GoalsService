@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
-using PetProject.AppData;
-using PetProject.Data;
+using Pet.Web.AppData;
+using Pet.Web.Data;
 using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);

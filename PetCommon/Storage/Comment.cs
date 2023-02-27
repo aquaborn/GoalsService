@@ -5,7 +5,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetCommon.Storage
+namespace Pet.Common.Storage
 {
     /// <summary>
     /// Комментарий пользователя

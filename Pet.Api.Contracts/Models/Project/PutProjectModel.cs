@@ -4,14 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pet.Common.Storage
+namespace Pet.Api.Contracts.Models.Project
 {
-    public class Project:Entity
+    public class PutProjectModel
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public DateTime CreatedOn { get; set; }
-
-        public ICollection<Goal> Goals { get; set; }
     }
 }

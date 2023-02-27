@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PetCommon.Storage;
+using Pet.Common.Storage;
 
-namespace PetCommon
+namespace Pet.Common
 {
     public class AppDbContext : DbContext
     {

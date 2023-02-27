@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PetCommon;
+using Pet.Common;
 
-namespace PetProject.AppData
+namespace Pet.Web.AppData
 {
     public static class DatabaseContextExtensions
     {

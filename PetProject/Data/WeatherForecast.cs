@@ -1,4 +1,4 @@
-namespace PetProject.Data
+namespace Pet.Web.Data
 {
     public class WeatherForecast
     {

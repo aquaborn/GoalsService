@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PetCommon\PetCommon.csproj" />
+    <ProjectReference Include="..\PetCommon\Pet.Common.csproj" />
   </ItemGroup>
 
 </Project>

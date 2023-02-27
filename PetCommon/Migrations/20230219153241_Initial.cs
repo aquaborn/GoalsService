@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace PetCommon.Migrations
+namespace Pet.Common.Migrations
 {
     /// <inheritdoc />
     public partial class Initial : Migration

@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using PetCommon.Repositories.Interfaces;
+using Pet.Api.Contracts.Models.Project;
+using Pet.Common.Repositories.Interfaces;
+using Pet.Common.Storage;
 using System;
 
 namespace Pet.Api.Controllers
@@ -25,14 +27,15 @@ namespace Pet.Api.Controllers
         /// <param name="projectId"></param>
         /// <returns></returns>
         [HttpGet("{projectId}")]
+        [ProducesResponseType(typeof(ProjectModel), StatusCodes.Status200OK)]
         public async Task<IActionResult> Get(Guid projectId)
         {
             try
             {
                 var project = await _repository.FindByIdAsync(projectId);
-                //var response = mapper.Map<GetPersonResponse>(person);
+                var response = _mapper.Map<ProjectModel>(project);
 
-                return Ok();
+                return Ok(response);
             }
             catch (Exception e)
             {
@@ -40,77 +43,78 @@ namespace Pet.Api.Controllers
             }
         }
 
-        ///// <summary>
-        ///// Create a project
-        ///// </summary>
-        ///// <returns></returns>
-        //[HttpPost]
-        ////[ProducesResponseType(typeof(CreatePersonResponse), StatusCodes.Status200OK)]
-        ////pe(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
-        //public async Task<IActionResult> Create(CreatePersonRequest request)
-        //{
-        //    try
-        //    {
-        //        if (ModelState.IsValid)
-        //        {
-        //            var newPerson = mapper.Map<Person>(request);
-        //            var personId = await _repository(newPerson);
-        //            return Ok(new CreatePersonResponse { Id = personId });
-        //        }
+        /// <summary>
+        /// Create a project
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [ProducesResponseType(typeof(PostProjectModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> Create(PostProjectModel request)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var newPerson = _mapper.Map<Project>(request);
+                    var project = await _repository.InsertAsync(newPerson);
+                    return Ok(new PostProjectModel { Id = project.Id });
+                }
 
-        //        return BadRequest();
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return ExceptionResult(e);
-        //    }
-        //}
+                return BadRequest();
+            }
+            catch (Exception e)
+            {
+                return ExceptionResult(e);
+            }
+        }
 
-        ///// <summary>
-        ///// Edit person
-        ///// </summary>
-        ///// <returns></returns>
-        //[HttpPut]
-        //[ProducesResponseType(typeof(EditPersonResponse), StatusCodes.Status200OK)]
-        //[ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
-        //public async Task<IActionResult> Edit(EditPersonRequest request)
-        //{
-        //    try
-        //    {
-        //        if (ModelState.IsValid)
-        //        {
-        //            var editCostModel = mapper.Map<EditPersonModel>(request);
-        //            var costId = await personService.EditAsync(editCostModel);
-        //            return Ok(new EditPersonResponse { Id = costId });
-        //        }
+        /// <summary>
+        /// Edit person
+        /// </summary>
+        /// <returns></returns>
+        [HttpPut]
+        [ProducesResponseType(typeof(PutProjectModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> Edit(PutProjectModel request)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var editCostModel = _mapper.Map<Project>(request);
+                    var costId = await _repository.UpdateAsync(editCostModel);
+                    return Ok();
+                }
 
-        //        return BadRequest();
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return ExceptionResult(e);
-        //    }
-        //}
+                return BadRequest();
+            }
+            catch (Exception e)
+            {
+                return ExceptionResult(e);
+            }
+        }
 
-        ///// <summary>
-        ///// Delete specified person
-        ///// </summary>
-        ///// <param name="personId"></param>
-        ///// <returns></returns>
-        //[HttpDelete("{personId}")]
-        //[ProducesResponseType(StatusCodes.Status200OK)]
-        //public async Task<IActionResult> Delete(Guid personId)
-        //{
-        //    try
-        //    {
-        //        await personService.DeleteAsync(personId);
-        //        return Ok();
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return ExceptionResult(e);
-        //    }
-        //}
+        /// <summary>
+        /// Delete specified project
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <returns></returns>
+        [HttpDelete("{projectId}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> Delete(Guid projectId)
+        {
+            try
+            {
+                var project = await _repository.FindByIdAsync(projectId);
+                await _repository.Delete(project);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return ExceptionResult(e);
+            }
+        }
 
     }
 }

@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PetCommon.Storage;
+using Pet.Common.Storage;
 
-namespace PetCommon.Repositories.Interfaces
+namespace Pet.Common.Repositories.Interfaces
 {
     public class TaskRepository : RepositoryBase<Goal>, ITaskRepository
     {
         private readonly AppDbContext _context;
 
-        public TaskRepository(AppDbContext context):base(context) 
+        public TaskRepository(AppDbContext context) : base(context) 
         {
             _context = context;
         }      

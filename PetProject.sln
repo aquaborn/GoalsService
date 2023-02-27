@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetProject", "PetProject\PetProject.csproj", "{B0D0AB0A-FA86-4D3E-B473-F6B0F3C2FB98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pet.Web", "PetProject\Pet.Web.csproj", "{B0D0AB0A-FA86-4D3E-B473-F6B0F3C2FB98}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetCommon", "PetCommon\PetCommon.csproj", "{E1649ED8-056E-48E5-8A46-16F1241856E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pet.Common", "PetCommon\Pet.Common.csproj", "{E1649ED8-056E-48E5-8A46-16F1241856E2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pet.Api", "Pet.Api\Pet.Api.csproj", "{D9694872-F7F6-4415-B0FF-33D7472BF4CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pet.Core", "Pet.Core\Pet.Core.csproj", "{168E5215-463D-49FD-B61B-0143FD6DD094}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pet.Core", "Pet.Core\Pet.Core.csproj", "{168E5215-463D-49FD-B61B-0143FD6DD094}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

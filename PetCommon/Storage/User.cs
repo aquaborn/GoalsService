@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetCommon.Storage
+namespace Pet.Common.Storage
 {
     /// <summary>
     /// Класс пользоватлей

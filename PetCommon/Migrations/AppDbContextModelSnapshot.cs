@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using PetCommon;
+using Pet.Common;
 
 #nullable disable
 
-namespace PetCommon.Migrations
+namespace Pet.Common.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot
@@ -22,7 +22,7 @@ namespace PetCommon.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("PetCommon.Storage.Attachment", b =>
+            modelBuilder.Entity("Pet.Common.Storage.Attachment", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -56,7 +56,7 @@ namespace PetCommon.Migrations
                     b.ToTable("Attachments");
                 });
 
-            modelBuilder.Entity("PetCommon.Storage.Comment", b =>
+            modelBuilder.Entity("Pet.Common.Storage.Comment", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -90,7 +90,7 @@ namespace PetCommon.Migrations
                     b.ToTable("Comments");
                 });
 
-            modelBuilder.Entity("PetCommon.Storage.Goal", b =>
+            modelBuilder.Entity("Pet.Common.Storage.Goal", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -132,7 +132,7 @@ namespace PetCommon.Migrations
                     b.ToTable("Tasks");
                 });
 
-            modelBuilder.Entity("PetCommon.Storage.Project", b =>
+            modelBuilder.Entity("Pet.Common.Storage.Project", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -160,7 +160,7 @@ namespace PetCommon.Migrations
                     b.ToTable("Projects");
                 });
 
-            modelBuilder.Entity("PetCommon.Storage.User", b =>
+            modelBuilder.Entity("Pet.Common.Storage.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -189,9 +189,9 @@ namespace PetCommon.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("PetCommon.Storage.Attachment", b =>
+            modelBuilder.Entity("Pet.Common.Storage.Attachment", b =>
                 {
-                    b.HasOne("PetCommon.Storage.Comment", "Comment")
+                    b.HasOne("Pet.Common.Storage.Comment", "Comment")
                         .WithMany("Attachments")
                         .HasForeignKey("CommentId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -200,15 +200,15 @@ namespace PetCommon.Migrations
                     b.Navigation("Comment");
                 });
 
-            modelBuilder.Entity("PetCommon.Storage.Comment", b =>
+            modelBuilder.Entity("Pet.Common.Storage.Comment", b =>
                 {
-                    b.HasOne("PetCommon.Storage.Goal", "Task")
+                    b.HasOne("Pet.Common.Storage.Goal", "Task")
                         .WithMany("Comments")
                         .HasForeignKey("TaskId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PetCommon.Storage.User", "User")
+                    b.HasOne("Pet.Common.Storage.User", "User")
                         .WithMany("Comments")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -219,15 +219,15 @@ namespace PetCommon.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("PetCommon.Storage.Goal", b =>
+            modelBuilder.Entity("Pet.Common.Storage.Goal", b =>
                 {
-                    b.HasOne("PetCommon.Storage.Goal", "ParentTask")
+                    b.HasOne("Pet.Common.Storage.Goal", "ParentTask")
                         .WithMany("SubTasks")
                         .HasForeignKey("ParentTaskId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("PetCommon.Storage.Project", "Project")
+                    b.HasOne("Pet.Common.Storage.Project", "Project")
                         .WithMany("Goals")
                         .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -238,24 +238,24 @@ namespace PetCommon.Migrations
                     b.Navigation("Project");
                 });
 
-            modelBuilder.Entity("PetCommon.Storage.Comment", b =>
+            modelBuilder.Entity("Pet.Common.Storage.Comment", b =>
                 {
                     b.Navigation("Attachments");
                 });
 
-            modelBuilder.Entity("PetCommon.Storage.Goal", b =>
+            modelBuilder.Entity("Pet.Common.Storage.Goal", b =>
                 {
                     b.Navigation("Comments");
 
                     b.Navigation("SubTasks");
                 });
 
-            modelBuilder.Entity("PetCommon.Storage.Project", b =>
+            modelBuilder.Entity("Pet.Common.Storage.Project", b =>
                 {
                     b.Navigation("Goals");
                 });
 
-            modelBuilder.Entity("PetCommon.Storage.User", b =>
+            modelBuilder.Entity("Pet.Common.Storage.User", b =>
                 {
                     b.Navigation("Comments");
                 });

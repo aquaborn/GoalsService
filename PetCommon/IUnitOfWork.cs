@@ -1,11 +1,11 @@
-﻿using PetCommon.Repositories.Interfaces;
+﻿using Pet.Common.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetCommon
+namespace Pet.Common
 {
     public interface IUnitOfWork : IDisposable
     {
