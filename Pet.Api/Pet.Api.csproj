@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Pet.Api.Contracts\Pet.Api.Contracts.csproj" />
     <ProjectReference Include="..\Pet.Core\Pet.Core.csproj" />
     <ProjectReference Include="..\PetCommon\Pet.Common.csproj" />
   </ItemGroup>
