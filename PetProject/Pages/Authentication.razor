@@ -1,0 +1,33 @@
+﻿@page "/authentication/{action}"
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using Microsoft.Extensions.Configuration
+
+@inject NavigationManager Navigation
+@inject IConfiguration Configuration
+
+<RemoteAuthenticatorView Action="@Action" OnLogInSucceeded="LoginSuccessHandler">
+    <LogOut>
+        @{
+            var authority = Configuration["Auth0:Authority"];
+            var clientId = Configuration["Auth0:ClientId"];
+
+            Navigation.NavigateTo($"{authority}/v2/logout?client_id={clientId}");
+        }
+    </LogOut>
+    <LogInFailed>
+        @{
+            var authority = Configuration["Auth0:Authority"];
+            var clientId = Configuration["Auth0:ClientId"];
+
+            Navigation.NavigateTo($"{authority}/v2/logout?client_id={clientId}");
+        }
+    </LogInFailed>
+</RemoteAuthenticatorView>
+
+@code {
+    [Parameter] public string Action { get; set; }
+    [Inject] public NavigationManager NavigationManager { get; set; }
+
+    void LoginSuccessHandler(RemoteAuthenticationState state)
+    { }
+}
