@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
-using Pet.Web.AppData;
-using Pet.Web.Data;
-using System.Threading.RateLimiting;
+using Pet.Blazor.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
-builder.Services.AddCustomSqlContext(builder.Configuration);
 
 var app = builder.Build();
 

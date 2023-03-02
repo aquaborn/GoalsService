@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pet.Web", "PetProject\Pet.Web.csproj", "{B0D0AB0A-FA86-4D3E-B473-F6B0F3C2FB98}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pet.Common", "PetCommon\Pet.Common.csproj", "{E1649ED8-056E-48E5-8A46-16F1241856E2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pet.Api", "Pet.Api\Pet.Api.csproj", "{D9694872-F7F6-4415-B0FF-33D7472BF4CC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pet.Core", "Pet.Core\Pet.Core.csproj", "{168E5215-463D-49FD-B61B-0143FD6DD094}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pet.Api.Contracts", "Pet.Api.Contracts\Pet.Api.Contracts.csproj", "{E1181531-3A48-4ECB-9970-B01852FDADF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pet.Api.Contracts", "Pet.Api.Contracts\Pet.Api.Contracts.csproj", "{E1181531-3A48-4ECB-9970-B01852FDADF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pet.Blazor", "Pet.Blazor\Pet.Blazor.csproj", "{3A8E8CB6-0990-4AF9-AA7A-3999000BBC06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B0D0AB0A-FA86-4D3E-B473-F6B0F3C2FB98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B0D0AB0A-FA86-4D3E-B473-F6B0F3C2FB98}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B0D0AB0A-FA86-4D3E-B473-F6B0F3C2FB98}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B0D0AB0A-FA86-4D3E-B473-F6B0F3C2FB98}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E1649ED8-056E-48E5-8A46-16F1241856E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E1649ED8-056E-48E5-8A46-16F1241856E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1649ED8-056E-48E5-8A46-16F1241856E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{E1181531-3A48-4ECB-9970-B01852FDADF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1181531-3A48-4ECB-9970-B01852FDADF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1181531-3A48-4ECB-9970-B01852FDADF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A8E8CB6-0990-4AF9-AA7A-3999000BBC06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A8E8CB6-0990-4AF9-AA7A-3999000BBC06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A8E8CB6-0990-4AF9-AA7A-3999000BBC06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A8E8CB6-0990-4AF9-AA7A-3999000BBC06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
