@@ -22,7 +22,7 @@ namespace Pet.Api.Controllers
         }
 
         /// <summary>
-        /// Get project by id
+        /// Get task by id
         /// </summary>
         /// <param name="projectId"></param>
         /// <returns></returns>
